@@ -1,7 +1,7 @@
 import React from 'react';
 import TabSmallBlock from '../TabSmallBlock';
-import * as styles from './styles.module.scss';
-import PriceCard from '../../PriceCard';
+import styles from './styles.module.scss';
+import PriceCard from 'components/PriceCard';
 
 export const LeftTab = () => (
   <div className={styles.top}>

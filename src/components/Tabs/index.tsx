@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
-import * as styles from './styles.module.scss';
+import styles from './styles.module.scss';
 
 const Tabs = ({ items, className, white }: any) => {
   const tabsRef = useRef<(HTMLElement | null)[]>([]);
