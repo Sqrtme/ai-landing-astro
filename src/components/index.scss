@@ -3,8 +3,8 @@
   font-style: normal;
   font-weight: normal;
   src:
-    url('./fonts/Gilroy-Regular.woff') format('woff'),
-    url('./fonts/Gilroy-Regular.ttf') format('truetype');
+    url('/fonts/Gilroy-Regular.woff') format('woff'),
+    url('/fonts/Gilroy-Regular.ttf') format('truetype');
 }
 
 @font-face {
@@ -12,8 +12,8 @@
   font-style: normal;
   font-weight: 600;
   src:
-    url('./fonts/Gilroy-SemiBold.woff') format('woff'),
-    url('./fonts/Gilroy-SemiBold.ttf') format('truetype');
+    url('/fonts/Gilroy-SemiBold.woff') format('woff'),
+    url('/fonts/Gilroy-SemiBold.ttf') format('truetype');
 }
 
 * {
