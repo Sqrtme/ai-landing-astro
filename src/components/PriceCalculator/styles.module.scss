@@ -1,0 +1,68 @@
+.main {
+  width: 345px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  p {
+    text-align: center;
+    color: #79766E;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+  }
+  input[type="text"] {
+    width: 280px;
+    padding: 17px;
+    text-align: center;
+    color: #242424;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 120%;
+    border-radius: 8px;
+    background: #FFF;
+    cursor: pointer;
+    outline: none;
+    border: none;
+  }
+  @media (max-width: 1000px) {
+    padding: 16px;
+  }
+}
+.mainTitle {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.inputError {
+  outline: 2px solid #FF5952 !important;
+}
+.error {
+  text-align: center;
+  width: 280px;
+  margin-top: 12px;
+  color: #FF5952;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  height: 22px;
+}
+
+.calculatedPrice {
+  margin-bottom: 40px;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 52px;
+  span {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 52px;
+  }
+}
+.largeTooltip {
+  width: 960px;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+}

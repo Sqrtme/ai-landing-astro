@@ -1,0 +1,56 @@
+.tabBase {
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.tabsCentered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabBtn {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 248px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .4s;
+  @media (max-width: 650px) {
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+  }
+}
+
+.tabBtnActive {
+  background: #FF9800;
+  color: #FFF;
+  cursor: default;
+}
+
+.tabsCenteredWhite {
+  padding: 8px;
+  background: white;
+  display: flex;
+  border-radius: 8px;
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+}
+.tabsCenteredGrey {
+  padding: 8px;
+  background: rgb(247, 247, 247);
+  display: flex;
+  border-radius: 8px;
+  @media (max-width: 650px) {
+    width: 100%;
+  }
+}

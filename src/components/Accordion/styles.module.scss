@@ -1,0 +1,41 @@
+.main {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.wrapper {
+  width: 912px;
+  border-radius: 12px;
+  background: #F7F7F7;
+  padding: 24px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  .title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+  }
+  .content {
+    transition: max-height .4s;
+    max-height: 0;
+    overflow: hidden;
+  }
+}
+
+._open {
+  max-height: 2000px !important;
+  margin-top: 16px;
+}
+
+.icon {
+  min-width: 24px;
+  background: rgba(255, 152, 0, 1);
+  border-radius: 99px;
+  padding: 6px;
+}

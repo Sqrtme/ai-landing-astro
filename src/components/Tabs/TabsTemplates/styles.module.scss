@@ -1,0 +1,54 @@
+.top {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gridTabsScroll {
+  padding: 32px;
+  gap: 32px;
+  overflow: auto;
+  max-width: 1024px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.gridTabsWrapper {
+  overflow: auto;
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+}
+.gridTabs {
+  display: flex;
+  min-width: 960px;
+  height: 724px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  gap: 34px;
+  @media (max-width: 760px) {
+    justify-content: flex-start;
+    min-width: unset;
+  }
+}
+
+.gridTabsHeader {
+  margin: 56px 0 32px 0;
+  @media (max-width: 760px) {
+    text-align: left;
+    margin: 40px 0 16px 12px;
+  }
+}
+
+.pricesWrapper {
+  display: flex;
+  overflow: auto;
+  justify-content: center;
+  gap: 34px;
+  padding: 64px 0;
+  margin-bottom: 56px;
+  @media (max-width: 1400px) {
+    justify-content: flex-start;
+  }
+}
