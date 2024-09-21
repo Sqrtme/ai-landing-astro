@@ -20,6 +20,7 @@ import {
 import Centered from 'components/Centered';
 import FeedBackForm from 'components/FeedBackForm';
 import { RightTab } from 'components/Tabs/TabsTemplates';
+import Tokenizer from 'components/Tokenizer/index.tsx';
 
 
 const PageMain = () => {
@@ -43,6 +44,7 @@ const PageMain = () => {
         </div>
       </div>
 
+      <Tokenizer />
       <RightTab />
       {/*<Tabs items={[{ id: 1, name: "Для меня", data: <LeftTab />}, { id: 2, name: "Для сотрудников", data: <RightTab />}]} />*/}
 
