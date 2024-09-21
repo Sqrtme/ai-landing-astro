@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, Fragment } from 'react';
 import cl100k_base from 'gpt-tokenizer/encoding/cl100k_base';
 import o200k_base from 'gpt-tokenizer/encoding/o200k_base';
 import styles from './styles.module.scss';
@@ -32,9 +32,9 @@ const TextInput = ({
 const TokenizedText = ({ tokens }: { tokens: (string | number)[] }) => (
   <div className={styles['tokenized-text']}>
     {tokens.map((token, index) => (String(token).match(/\n/g)) ? (
-      <>
-        {String(token).match(/\n/g).map(() => (<span key={index} style={{ width: '100%' }}><br/></span>))}
-      </>
+      <Fragment key={index}>
+        {String(token).match(/\n/g).map((t, inx) => (<span key={`t-${inx}`} style={{ width: '100%' }}><br/></span>))}
+      </Fragment>
     ) : (
       <span key={index} style={{ backgroundColor: pastelColors[index % pastelColors.length] }}>
         {String(token).replaceAll(" ", "\u00A0")}
@@ -47,7 +47,7 @@ type Encoding = "cl100k_base" | "o200k_base";
 
 const Tokenizer = () => {
   const [inputText, setInputText] = useState(
-    "Много слов соответствуют одному токену, но некоторые — нет: они неделимы." + "\n" +"Символы Unicode, такие как эмодзи, могут разбиваться на несколько токенов, содержащих базовые байты: 🤚🏾\n" +
+    "Многие слова или хотя бы их часть соответствуют одному токену. " + "\n" +"Символы Unicode, такие как эмодзи, могут разбиваться на несколько токенов, содержащих базовые байты: 🤚🏾\n" +
     "\n" +
     "Последовательности символов, которые часто встречаются рядом, могут группироваться вместе: 1234567890."
   );
