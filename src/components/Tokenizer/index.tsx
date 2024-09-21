@@ -1,16 +1,10 @@
 import React, { useState, useMemo } from 'react';
-
-import api from "gpt-tokenizer";
 import cl100k_base from 'gpt-tokenizer/encoding/cl100k_base';
-import p50k_base from 'gpt-tokenizer/encoding/p50k_base';
-import r50k_base from 'gpt-tokenizer/encoding/r50k_base';
-import p50k_edit from 'gpt-tokenizer/encoding/p50k_edit';
+import o200k_base from 'gpt-tokenizer/encoding/o200k_base';
 import styles from './styles.module.scss';
 const tokenizers = {
+  o200k_base,
   cl100k_base,
-  p50k_base,
-  r50k_base,
-  p50k_edit
 };
 
 const pastelColors = [
@@ -49,7 +43,7 @@ const TokenizedText = ({ tokens }: { tokens: (string | number)[] }) => (
   </div>
 );
 
-type Encoding = "cl100k_base" | "p50k_base" | "p50k_edit" | "r50k_base";
+type Encoding = "cl100k_base" | "o200k_base";
 
 const Tokenizer = () => {
   const [inputText, setInputText] = useState(
@@ -60,7 +54,7 @@ const Tokenizer = () => {
   const [displayTokens, setDisplayTokens] = useState(false);
 
   const [selectedEncoding, setSelectedEncoding] = useState<Encoding>(
-    "cl100k_base"
+    "o200k_base"
   );
 
 
@@ -77,12 +71,8 @@ const Tokenizer = () => {
         value={selectedEncoding}
         onChange={onModelSelect}
       >
-        <option value="cl100k_base">
-          cl100k_base (GPT-3.5-turbo and GPT-4)
-        </option>
-        <option value="p50k_base">p50k_base</option>
-        <option value="p50k_edit">p50k_edit</option>
-        <option value="r50k_base">r50k_base</option>
+        <option value="o200k_base">GPT-4o</option>
+        <option value="cl100k_base">GPT-4; GPT-3.5-turbo</option>
       </select>
     </div>
   );
