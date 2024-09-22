@@ -1,9 +1,11 @@
 import { defineConfig } from 'astro/config';
 import react from "@astrojs/react";
-import vercel from '@astrojs/vercel/static';
+import wasm from "vite-plugin-wasm";
+import topLevelAwait from "vite-plugin-top-level-await";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  output: 'static',
-  adapter: vercel(),
+  vite: {
+    plugins: [wasm(), topLevelAwait()],
+  }
 });

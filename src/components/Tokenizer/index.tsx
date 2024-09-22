@@ -51,7 +51,6 @@ const Tokenizer = () => {
     "\n" +
     "Последовательности символов, которые часто встречаются рядом, могут группироваться вместе: 1234567890."
   );
-  const [displayTokens, setDisplayTokens] = useState(false);
 
   const [selectedEncoding, setSelectedEncoding] = useState<Encoding>(
     "o200k_base"
@@ -90,9 +89,6 @@ const Tokenizer = () => {
     return tokens;
   }, [encodedTokens, api]);
 
-  const toggleDisplay = () => {
-    setDisplayTokens(!displayTokens);
-  };
 
   return (
       <div className={`main ${styles['tokenizer-container-centered']}`}>
@@ -115,11 +111,7 @@ const Tokenizer = () => {
               <span>{encodedTokens.length}</span>
             </div>
           </div>
-          <TokenizedText tokens={displayTokens ? encodedTokens : decodedTokens}/>
-
-          {/*<button onClick={toggleDisplay}>*/}
-          {/*  {displayTokens ? "Show tokenized text" : "Show Token IDs"}*/}
-          {/*</button>*/}
+          <TokenizedText tokens={decodedTokens}/>
         </div>
       </div>
   );
