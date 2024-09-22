@@ -1,12 +1,13 @@
 import React, { useState, useMemo, Fragment } from 'react';
-import cl100k_base from 'gpt-tokenizer/encoding/cl100k_base';
-import o200k_base from 'gpt-tokenizer/encoding/o200k_base';
+// import cl100k_base from 'gpt-tokenizer/encoding/cl100k_base';
+import api from 'gpt-tokenizer';
+// import o200k_base from 'gpt-tokenizer/encoding/o200k_base';
 import styles from './styles.module.scss';
-const tokenizers = {
-  o200k_base,
-  cl100k_base,
-};
-
+// const tokenizers = {
+//   o200k_base,
+//   cl100k_base,
+// };
+//
 const pastelColors = [
   "rgba(107,64,216,.3)",
   "rgba(104,222,122,.4)",
@@ -78,7 +79,7 @@ const Tokenizer = () => {
 
 
 
-  const api = tokenizers[selectedEncoding];
+  // const api = tokenizers[selectedEncoding];
   const encodedTokens = api.encode(inputText);
 
   const decodedTokens = useMemo(() => {
@@ -89,11 +90,11 @@ const Tokenizer = () => {
     return tokens;
   }, [encodedTokens, api]);
 
-
+  console.log(api)
   return (
       <div className={`main ${styles['tokenizer-container-centered']}`}>
         <div className={styles['tokenizer-container']}>
-          {selectEncoding}
+          {/*{selectEncoding}*/}
           <div className="tokenizer">
             <TextInput
               value={inputText}
